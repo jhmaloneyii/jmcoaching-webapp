@@ -37,7 +37,9 @@
       -moz-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
     }
-    .btn-outline-primary:hover, btn-outline-primary:focus btn-outline-primary:active {
+    .btn-outline-primary:hover,
+    .btn-outline-primary:focus,
+    .btn-outline-primary:active {
       color: white;
       background-color: $jm-red;
       box-shadow: none;
@@ -74,7 +76,7 @@
 }
 
 .focus-section{
-  padding-top: 150px;
+  padding-top: 100px;
   padding-bottom: 150px;
   color: black;
   background-color: white;
@@ -85,7 +87,9 @@
     padding: 5px 20px;
     margin: 20px;
   }
-  .btn-outline-primary:hover, btn-outline-primary:focus btn-outline-primary:active {
+  .btn-outline-primary:hover,
+  .btn-outline-primary:focus,
+  .btn-outline-primary:active {
     color: white;
     background-color: $jm-blue;
     box-shadow: none;

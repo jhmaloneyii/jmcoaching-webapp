@@ -1,0 +1,27 @@
+@import "variables";
+.navbar {
+  background-color: white;
+  color: $jm-grey;
+  padding: 15px 0;
+  height: 100px;
+
+  a.navbar-brand {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 22px;
+    color: $jm-red;
+  }
+
+  a.nav-link {
+    padding: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $jm-grey;
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}

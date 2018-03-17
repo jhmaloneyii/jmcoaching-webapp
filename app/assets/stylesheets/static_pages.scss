@@ -1,3 +1,93 @@
-// Place all the styles related to the static_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+.masthead {
+  display: table;
+  
+  width: 100%;
+  height: auto;
+  padding: 200px 0;
+
+  text-align: center;
+
+  background: image_url('header_with_bolt.png') no-repeat bottom center scroll;
+  background-color: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  .intro-body {
+    display: table-cell;
+
+    vertical-align: middle;
+    .brand-heading {
+      font-size: 50px;
+    }
+    .intro-text {
+      font-size: 18px;
+      color: $jm-grey;
+    }
+
+    .btn-outline-primary {
+      color: $jm-red;
+      border-color: $jm-red;
+      padding: 5px 20px;
+      margin: 20px;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+    .btn-outline-primary:hover, btn-outline-primary:focus btn-outline-primary:active {
+      color: white;
+      background-color: $jm-red;
+      box-shadow: none;
+    }
+  }
+
+  @media(min-width:768px) {
+    padding: 200;
+    .intro-body {
+      .brand-heading {
+        font-size: 100px;
+      }
+      .intro-text {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+.photo {
+  padding: 0px;
+  margin: 0px;
+  height: 400px;
+}
+
+.photo-circle {
+  border-radius: 50%;
+  margin: 40px 40px;
+}
+
+.text-block {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.focus-section{
+  padding-top: 150px;
+  padding-bottom: 150px;
+  color: black;
+  background-color: white;
+
+  .btn-outline-primary {
+    color: $jm-blue;
+    border-color: $jm-blue;
+    padding: 5px 20px;
+    margin: 20px;
+  }
+  .btn-outline-primary:hover, btn-outline-primary:focus btn-outline-primary:active {
+    color: white;
+    background-color: $jm-blue;
+    box-shadow: none;
+  }
+}

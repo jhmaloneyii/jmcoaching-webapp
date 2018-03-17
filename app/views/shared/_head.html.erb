@@ -1,0 +1,9 @@
+<!--Head -->
+
+<%= favicon_link_tag asset_path('JM Coaching logo.png'), :rel => 'icon', :type =>  'image/png' %>
+<title><%= yield(:title) %> | JM Coaching Services</title>
+
+<%= csrf_meta_tags %>
+
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>

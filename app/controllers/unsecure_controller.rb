@@ -1,0 +1,2 @@
+class UnsecureApplicationController < UnsecureApplicationController
+end

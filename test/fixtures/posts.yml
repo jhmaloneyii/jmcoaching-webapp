@@ -3,7 +3,13 @@
 one:
   title: MyString
   content: MyText
+  summary: MyText
+  active: false
+  image: MyString
 
 two:
   title: MyString
   content: MyText
+  summary: MyText
+  active: false
+  image: MyString

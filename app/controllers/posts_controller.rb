@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class PostsController < UnsecureApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts

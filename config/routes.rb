@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :tags
   devise_for :admins
 
   resources :posts, path: 'blog'

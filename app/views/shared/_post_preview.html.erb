@@ -1,0 +1,10 @@
+<% if post.active %>
+  <div class="row">
+    <div class="col-lg-4 mx-auto text-center">
+    </div>
+    <div class="col-lg-8 mx-auto">
+      <h1><%= link_to post.title, post %></h1>
+      <p><%= post.summary %></p>
+    </div>
+  </div>
+<% end %>

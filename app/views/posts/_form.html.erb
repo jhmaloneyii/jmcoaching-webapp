@@ -32,8 +32,11 @@
   </div>
 
   <div class="field">
+    <% if @post.image? %>
+    <%= image_tag @post.image.to_s %>
+    <% end %>
     <%= form.label :image %>
-    <%= form.text_field :image, id: :post_image %>
+    <%= form.file_field :image, id: :post_image %>
   </div>
 
   <div class="actions">

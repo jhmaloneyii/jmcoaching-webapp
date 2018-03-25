@@ -5,6 +5,7 @@
           <div class="col-lg-10 mx-auto">
             <h1><%= @post.title %> </h1>
             <br>
+            <%= image_tag @post.image_url.to_s, class: "img-fluid"%><br>
             <%= sanitize @post.content %>
           </div>
         </div>

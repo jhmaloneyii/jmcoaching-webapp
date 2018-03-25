@@ -18,10 +18,12 @@
 
 .page-wrapper {
   padding-top: 100px;
+  display: flex;
 }
 
 #yield-content {
   padding: 0;
+  display: block;
 }
 
 html {

@@ -20,6 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 #use carrierwave for file uploads
 gem 'carrierwave'
+#use fog for AWS S3
+gem 'fog-aws'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

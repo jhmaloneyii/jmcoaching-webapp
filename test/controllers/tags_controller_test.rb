@@ -66,7 +66,7 @@ class TagsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to new_admin_session_url
 
-    get edit_tag_url
+    get edit_tag_url(@tag)
     assert_redirected_to new_admin_session_url
 
     patch tag_url(@tag), params: { tag: { name: @tag.name } }

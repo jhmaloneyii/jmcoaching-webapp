@@ -15,7 +15,7 @@
       <% end %>
 
       <div class="field">
-        <%= form.label :title %>
+        <%= form.label :title %><br>
         <%= form.text_field :title, id: :post_title %>
       </div>
 
@@ -36,7 +36,7 @@
 
       <div class="field">
         <% if @post.image? %>
-        <%= image_tag @post.image.to_s %>
+        <%= image_tag @post.image.to_s, class: "img-fluid"%>
         <% end %>
         <%= form.label :image %>
         <%= form.file_field :image, id: :post_image %>

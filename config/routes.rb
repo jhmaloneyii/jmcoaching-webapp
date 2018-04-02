@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   resources :tags
+  get 'tag_admin', to: 'tags#tag_admin'
+
   devise_for :admins, :skip => [:registrations]
 
   resources :posts, path: 'blog'

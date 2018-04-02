@@ -7,6 +7,9 @@
         <li>
           <%= link_to "Blog Admin Panel", blog_admin_path %>
         </li>
+        <li>
+          <%= link_to "Tag Admin Panel", tag_admin_path %>
+        </li>
         <% if admin_signed_in? %>
           <li class="nav-item">
             <%= link_to "Sign Out", destroy_admin_session_path, method: :delete %>

@@ -27,6 +27,7 @@
       <div class="field">
         <%= form.label :summary %>
         <%= form.text_area :summary, id: :post_summary %>
+        <p>Characters left: <span id="counter" data-maximum-length="<%= @summary_max %>"><%= @summary_max %></span></p>
       </div>
 
       <div class="field">
@@ -51,3 +52,16 @@
 </div>
 
 <%= tinymce %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      var summary_text = $("#post_summary");
+      var counter     = $("#counter");
+      var max_length  = counter.data("maximum-length");
+
+      summary_text.keyup(function() {
+          counter.text(max_length - $(this).val().length);
+      });
+
+    });
+</script>

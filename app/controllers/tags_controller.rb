@@ -8,6 +8,10 @@ class TagsController < ApplicationController
     @tags = Tag.all
   end
 
+  def tag_admin
+    @tags = Tag.all
+  end
+
   # GET /tags/1
   # GET /tags/1.json
   def show

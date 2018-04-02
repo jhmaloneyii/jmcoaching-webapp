@@ -2,10 +2,14 @@
 <section class="content-section">
       <div class="container">
         <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h1><%= @post.title %> </h1>
-            <br>
+          <div class="col-lg-10 mx-auto post-top text-center">
             <%= image_tag @post.image_url.to_s, class: "img-fluid"%><br>
+            <h1><%= @post.title %> </h1>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-9 mx-auto">
             <%= sanitize @post.content %>
           </div>
         </div>

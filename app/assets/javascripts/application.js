@@ -14,6 +14,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require tinymce
+//= require chosen-jquery
 //
 //= require rails-ujs
 //= require turbolinks

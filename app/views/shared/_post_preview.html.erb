@@ -6,6 +6,10 @@
     <div class="col-lg-8 mx-auto">
       <h1><%= link_to post.title, post %></h1>
       <p><%= post.summary %></p>
+      <p>Tags: 
+        <% post.tags.each do |tag| %>
+          <%= link_to "#{tag.name}", tag %>
+        <% end %>
     </div>
   </div>
 <% end %>

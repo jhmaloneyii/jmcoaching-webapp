@@ -31,6 +31,11 @@
       </div>
 
       <div class="field">
+        <%= form.label :tags %>
+        <%= form.collection_select :tag_ids, Tag.order(:name), :id, :name, {}, {multiple: true, class: "chosen-select"} %><br>
+      </div>
+
+      <div class="field">
         <%= form.label :active %>
         <%= form.check_box :active, id: :post_active %>
       </div>

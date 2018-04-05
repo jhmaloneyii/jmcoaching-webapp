@@ -5,7 +5,7 @@ class PostsController < UnsecureApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :asc)
   end
 
   def blog_admin

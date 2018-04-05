@@ -14,6 +14,7 @@
             <p>Blog Tags: <% @post.tags.each do |tag| %>
               <%= link_to "#{tag.name}", tag %>
             <% end %><br></p>
+            <p>Updated: <%= @post.updated_at.strftime("%B %d, %Y") %>
           </div>
         </div>
 

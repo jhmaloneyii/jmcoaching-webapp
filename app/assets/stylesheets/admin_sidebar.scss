@@ -1,0 +1,18 @@
+@import "variables";
+
+.sidebar {
+  color: $jm-grey;
+  background-color: white;
+  min-width: 250px;
+  min-height: 100vh;
+  border-right-style: solid;
+  padding: 15px;
+}
+
+.sidebar-content {
+  position: fixed;
+
+  ul {
+    list-style-type: none;
+  }
+}

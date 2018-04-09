@@ -1,9 +1,14 @@
 class PostsController < UnsecureApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, except: [:index, :show]
 
   # GET /posts
   # GET /posts.json
   def index
+    @posts = Post.all.order(created_at: :asc)
+  end
+
+  def blog_admin
     @posts = Post.all
   end
 
@@ -69,6 +74,6 @@ class PostsController < UnsecureApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :summary, :active, :image)
+      params.require(:post).permit(:title, :content, :summary, :active, :image, tag_ids: [])
     end
 end

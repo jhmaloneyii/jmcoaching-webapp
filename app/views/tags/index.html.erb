@@ -1,0 +1,23 @@
+<% provide(:title, "Tags: Admin Index") %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 mx-auto">
+      <%= link_to "Create New Tag", new_tag_path %>
+
+      <table class="table">
+        <tr>
+          <th>Tag Name</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <% @tags.each do |tag| %>
+          <tr>
+            <td><h3><%= link_to "#{tag.name}", tag %></h3></td>
+            <td><%= link_to "Edit", edit_tag_path(tag.id) %></td>
+            <td><%= link_to "Delete", tag_path(tag.id), method: :delete, data: {confirm: "Are you sure you want to delete?"} %></td>
+          </tr>
+        <%end%>
+      </table>
+    </div>
+  </div>
+</div>

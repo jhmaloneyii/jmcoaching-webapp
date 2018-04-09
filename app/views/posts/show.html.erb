@@ -1,36 +1,31 @@
 <% provide(:title, @post.title) %>
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <p id="notice"><%= notice %></p>
+<section class="content-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 mx-auto post-top text-center">
+            <%= image_tag @post.image_url.to_s, class: "img-fluid"%><br>
+            <h1><%= @post.title %> </h1>
+          </div>
+        </div>
 
-      <p>
-        <strong>Title:</strong>
-        <%= @post.title %>
-      </p>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <%= sanitize @post.content %>
+            <p>Blog Tags: <% @post.tags.each do |tag| %>
+              <%= link_to "#{tag.name}", tag %>
+            <% end %><br></p>
+            <p>Updated: <%= @post.updated_at.strftime("%B %d, %Y") %>
+          </div>
+        </div>
 
-      <p>
-        <strong>Content:</strong>
-        <%= @post.content %>
-      </p>
-
-      <p>
-        <strong>Summary:</strong>
-        <%= @post.summary %>
-      </p>
-
-      <p>
-        <strong>Active:</strong>
-        <%= @post.active %>
-      </p>
-
-      <p>
-        <strong>Image:</strong>
-        <%= @post.image %>
-      </p>
-
-      <%= link_to 'Edit', edit_post_path(@post) %> |
-      <%= link_to 'Back', posts_path %>
-    </div>
-  </div>
-</div>
+        <div class= "row">
+          <div class= "col-lg-6 mx-auto">
+            <p><%= link_to "Back", posts_path %>
+              <% if admin_signed_in? %>
+                | <%= link_to "Edit", edit_post_path(@post.id) %> |
+                <%= link_to "Delete", @post, method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+              <% end %>
+            </p>
+          </div>
+      </div>
+</section>

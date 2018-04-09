@@ -15,13 +15,16 @@
  */
 @import "bootstrap";
 @import "variables";
+@import "chosen";
 
 .page-wrapper {
-  padding-top: 100px;
+  padding-top: 50px;
+  display: flex;
 }
 
 #yield-content {
   padding: 0;
+  display: block;
 }
 
 html {
@@ -53,4 +56,14 @@ p {
 a {
   font-size: 15px;
   color: $jm-blue;
+}
+
+body {
+  font-family: Tahoma, Geneva, sans-serif;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  color: black;
+  background-color: white;
 }

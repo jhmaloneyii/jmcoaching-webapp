@@ -12,6 +12,11 @@
     <%= link_to image_tag("youtube_logo.png", size: "64", class: "picture"), "https://www.youtube.com/channel/UCZWLI2GDZqS6HmnwSMRQN8Q" %>
     <br>
     <p>Copyright &copy; JM Coaching Services LLC 2018</p>
+    <% if admin_signed_in? %>
+      <%= link_to "Sign Out", destroy_admin_session_path, method: :delete, class: "nav-link"%>
+    <% else %>
+      <%= link_to "Sign In", new_admin_session_path(), class: "nav-link"%>
+    <% end %>
   </div>
 </footer>
     

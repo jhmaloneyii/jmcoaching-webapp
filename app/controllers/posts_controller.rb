@@ -5,7 +5,7 @@ class PostsController < UnsecureApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order(updated_at: :asc)
+    @posts = Post.all.order(updated_at: :desc)
     respond_to do |format|
       format.html
       format.rss { render :layout => false }

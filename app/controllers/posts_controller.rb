@@ -6,6 +6,10 @@ class PostsController < UnsecureApplicationController
   # GET /posts.json
   def index
     @posts = Post.all.order(created_at: :asc)
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false }
+    end
   end
 
   def blog_admin

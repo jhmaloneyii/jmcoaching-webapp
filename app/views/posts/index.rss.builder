@@ -1,9 +1,10 @@
 xml.instruct! :xml, :version => "1.0"
-xml.rss :version => "2.0" do
+xml.rss :version => "2.0", 'xmlns:atom' => "http://www.w3.org/2005/Atom" do
   xml.channel do
     xml.title "JM Coaching Blog"
     xml.description "Blog for JM Coaching Services"
     xml.link posts_url
+    xml.tag! 'atom:link', :rel => 'self', :type => 'application/rss+xml', :href => posts_url
 
     @posts.each do |post|
       xml.item do

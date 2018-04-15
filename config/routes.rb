@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :products
   resources :tags
 
   devise_for :admins, :skip => [:registrations]

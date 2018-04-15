@@ -10,11 +10,12 @@
         <li>
           <%= link_to "Tag Admin Panel", tags_path %>
         </li>
-        <% if admin_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Sign Out", destroy_admin_session_path, method: :delete %>
-          </li>
-        <% end %>
+        <li>
+          <%= link_to "Products Admin Panel", products_path %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign Out", destroy_admin_session_path, method: :delete %>
+        </li>
       </ul>
     </div>
   </div>

@@ -1,5 +1,5 @@
 <!--Head -->
-<%= render 'shared/google_analytics' %>
+<%= if Rails.env.production? then render 'shared/google_analytics' end %>
 <%= favicon_link_tag asset_path('JM Coaching logo.png'), :rel => 'icon', :type =>  'image/png' %>
 <title><%= yield(:title) %> | JM Coaching Services</title>
 

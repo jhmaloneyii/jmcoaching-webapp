@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180413042902) do
+ActiveRecord::Schema.define(version: 20180415232942) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -48,12 +48,30 @@ ActiveRecord::Schema.define(version: 20180413042902) do
     t.index ["tag_id", "post_id"], name: "index_posts_tags_on_tag_id_and_post_id"
   end
 
+  create_table "product_fields", force: :cascade do |t|
+    t.string "name"
+    t.string "field_type"
+    t.boolean "required"
+    t.integer "product_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_type_id"], name: "index_product_fields_on_product_type_id"
+  end
+
+  create_table "product_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.float "price"
     t.string "name"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "product_type_id"
+    t.text "properties"
   end
 
   create_table "tags", force: :cascade do |t|

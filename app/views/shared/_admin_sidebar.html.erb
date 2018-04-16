@@ -1,22 +1,22 @@
 <nav class="sidebar" id="admin-sidebar">
   <div class="sidebar-content">
     <div class="sidebar-header">
-      <h3>Admin</h3>
+      <h2>Admin</h2>
       <p>Hello, <%= "#{current_admin.username}" %>! </p>
-      <ul>
-        <li>
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-action">
           <%= link_to "Blog Admin Panel", blog_admin_path %>
         </li>
-        <li>
+        <li class="list-group-item list-group-item-action">
           <%= link_to "Tag Admin Panel", tags_path %>
         </li>
-        <li>
+        <li class="list-group-item list-group-item-action">
           <%= link_to "Products Admin Panel", products_path %>
         </li>
-                <li>
+        <li class="list-group-item list-group-item-action">
           <%= link_to "Product Type Admin Panel", product_types_path %>
         </li>
-        <li class="nav-item">
+        <li class="list-group-item list-group-item-action">
           <%= link_to "Sign Out", destroy_admin_session_path, method: :delete %>
         </li>
       </ul>

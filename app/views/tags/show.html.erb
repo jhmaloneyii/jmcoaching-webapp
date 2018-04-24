@@ -10,7 +10,7 @@
 
         <div class= "row">
           <div class= "col-lg-12 mx-auto">
-            <% @tag.posts.each do |post| %>
+            <% @posts.each do |post| %>
               <%= render 'shared/post_preview', post: post %>
             <% end %>
           </div>

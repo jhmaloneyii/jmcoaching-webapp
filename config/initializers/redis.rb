@@ -1,1 +1,3 @@
-$redis = Redis.new(:driver => :hiredis)
+require 'redis'
+
+$redis = Redis.new

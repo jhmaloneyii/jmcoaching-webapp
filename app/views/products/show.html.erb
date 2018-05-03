@@ -15,5 +15,9 @@
   <%= @product.description %>
 </p>
 
+<% if signed_in? %>
+  <%= link_to @cart_action, cart_action_path(@product), class: "button", method: :put, remote: true %>
+<% end %><br>
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

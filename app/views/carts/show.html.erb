@@ -1,2 +1,22 @@
 <h1>Cart#show</h1>
 <p>Find me in app/views/cart/show.html.erb</p>
+
+<table class="table table-hover table-responsive">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @cart_products.each do |product| %>
+            <tr>
+              <td><h4><%= product.name %></h4></td>
+              <td><%= product.price %></td>
+              <td><%= product.product_type.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>

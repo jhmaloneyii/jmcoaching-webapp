@@ -12,4 +12,12 @@ class Product < ApplicationRecord
     end
 
   end
+
+  def cart_action(current_user_id)
+    if $redis.sismember "cart#{current_user_id}", id
+      "remove_from"
+    else
+      "add_to"
+    end
+  end
 end

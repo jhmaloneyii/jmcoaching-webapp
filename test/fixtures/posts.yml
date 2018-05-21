@@ -1,15 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  content: MyText
-  summary: MyText
-  active: false
-  image: MyString
+  title: Test Post One
+  content: This post is a test post. The post is a valid post, and has everything a valid post needs.
+  summary: This is the posts summary, it's short
+  active: true
 
 two:
-  title: MyString
-  content: MyText
-  summary: MyText
-  active: false
-  image: MyString
+  title: Test Post two
+  content: This post is a test post. The post is a valid post, and has everything a valid post needs.
+  summary: This is the posts summary, it's short
+  active: true 

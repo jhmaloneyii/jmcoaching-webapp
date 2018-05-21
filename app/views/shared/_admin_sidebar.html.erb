@@ -5,16 +5,16 @@
       <p>Hello, <%= "#{current_admin.username}" %>! </p>
       <ul class="list-group">
         <li class="list-group-item list-group-item-action">
-          <%= link_to "Blog Admin Panel", blog_admin_path %>
+          <%= link_to "Blog Admin Panel", admin_posts_path %>
         </li>
         <li class="list-group-item list-group-item-action">
-          <%= link_to "Tag Admin Panel", tags_path %>
+          <%= link_to "Tag Admin Panel", admin_tags_path %>
         </li>
         <li class="list-group-item list-group-item-action">
-          <%= link_to "Products Admin Panel", products_path %>
+          <%= link_to "Products Admin Panel", admin_products_path %>
         </li>
         <li class="list-group-item list-group-item-action">
-          <%= link_to "Product Type Admin Panel", product_types_path %>
+          <%= link_to "Product Type Admin Panel", admin_product_types_path %>
         </li>
         <li class="list-group-item list-group-item-action">
           <%= link_to "Sign Out", destroy_admin_session_path, method: :delete %>

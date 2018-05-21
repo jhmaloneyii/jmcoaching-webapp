@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  field_type: MyString
+  name: Size
+  field_type: select
   required: false
   product_type: one
 
 two:
-  name: MyString
-  field_type: MyString
-  required: false
+  name: digital
+  field_type: boolean
+  required: true
   product_type: two

@@ -5,15 +5,21 @@ Rails.application.routes.draw do
     put 'remove/:product_id', to: 'carts#remove', as: :remove_from
   end
 
-  devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
-  resources :product_types
-  resources :products
-  resources :tags
+  namespace :admin do
+    get '/', to: 'admin#home'
+    resources :product_types
+    resources :products
+    resources :tags
+    resources :posts, path: 'blog'
+  end
 
+  devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   devise_for :admins, :skip => [:registrations]
 
-  resources :posts, path: 'blog'
-  get 'blog_admin', to: 'posts#blog_admin'
+  resources :posts, path: 'blog', only: [:index, :show]
+  resources :products, path: 'store', only: [:index, :show]
+  resources :tags, only: [:index, :show]
+
 
   root to: 'static_pages#home'
   get 'athletes', to: 'static_pages#athletes'

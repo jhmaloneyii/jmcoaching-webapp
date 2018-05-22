@@ -6,4 +6,14 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get athletes" do
+    get athletes_url
+    assert_response :success
+  end
+
+  test "should get coach" do
+    get coach_url
+    assert_response :success
+  end
+
 end

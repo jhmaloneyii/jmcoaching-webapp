@@ -4,9 +4,7 @@ class Admin::PostsControllerTest < ActionDispatch::IntegrationTest
   setup do
   @valid_admin = admins(:valid_admin)
   @post1 = posts(:one)
-  p "Post 1 ID: #{@post1.id}"
   @post2 = posts(:two)
-  p "Post 2 ID: #{@post2.id}"
   end
 
   test "should get new" do

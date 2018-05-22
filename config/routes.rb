@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     put 'remove/:product_id', to: 'carts#remove', as: :remove_from
   end
 
+  #admin routes
   namespace :admin do
     get '/', to: 'admin#home'
     resources :product_types
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
     resources :posts, path: 'blog'
   end
 
+  #different authentication models - devise
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   devise_for :admins, :skip => [:registrations]
 

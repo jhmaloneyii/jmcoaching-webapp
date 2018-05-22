@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-10 mx-auto">
-      <%= form_with(model: post, local: true) do |form| %>
+      <%= form_with(model: [ :admin,post], local: true) do |form| %>
       <% if post.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>

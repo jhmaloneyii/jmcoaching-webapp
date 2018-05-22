@@ -7,4 +7,7 @@ class User < ApplicationRecord
   def cart_count
     $redis.scard "cart#{id}"
   end
+
+  def empty_cart
+  end
 end

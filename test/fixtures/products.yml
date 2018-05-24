@@ -5,9 +5,11 @@ one:
   name: Widget
   description: This is a thing that does stuff
   product_type: one
+  properties:
 
 two:
   price: 19.99
   name: Amazing Product
   description: This product is amazing and everyone will buy it
   product_type: two
+  properties:

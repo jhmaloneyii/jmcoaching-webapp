@@ -9,5 +9,6 @@ class User < ApplicationRecord
   end
 
   def empty_cart
+    $redis.del "cart#{id}"
   end
 end

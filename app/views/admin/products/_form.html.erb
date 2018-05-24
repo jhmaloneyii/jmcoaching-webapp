@@ -30,7 +30,7 @@
 
   <%= form.fields_for :properties, OpenStruct.new(@product.properties) do |builder| %>
     <% @product.product_type.fields.each do |field| %>
-      <%= render "products/fields/#{field.field_type}", field: field, form: builder %>
+      <%= render "admin/products/fields/#{field.field_type}", field: field, form: builder %>
     <% end %>
   <% end %>
 

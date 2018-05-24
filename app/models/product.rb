@@ -2,6 +2,8 @@ class Product < ApplicationRecord
   belongs_to :product_type
   serialize :properties, Hash
 
+  validates :product_type_id, presence: true
+
   validate :validate_required
 
   def validate_required

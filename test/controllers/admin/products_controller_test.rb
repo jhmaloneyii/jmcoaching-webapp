@@ -17,7 +17,7 @@ class Admin::ProductsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     sign_in @valid_admin
 
-    get new_admin_product_url
+    get new_admin_product_url(product_type_id: ProductType.first.id)
     assert_response :success
   end
 
@@ -25,9 +25,9 @@ class Admin::ProductsControllerTest < ActionDispatch::IntegrationTest
     sign_in @valid_admin
 
     assert_difference('Product.count') do
-      post admin_products_url, params: { product: { name: "Created Product", price: 14.99, description: "This product was created" } }
+      post admin_products_url, params: { product: { name: "Created Product", price: 14.99, description: "This product was created", product_type_id: @product1.product_type_id } }
     end
-    assert_redirect_to admin_product_url(Product.last)
+    assert_redirected_to product_url(Product.last)
   end
 
   test "should get edit" do
@@ -39,11 +39,8 @@ class Admin::ProductsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update product" do
     sign_in @valid_admin
-
-    assert_difference('Product.count') do
-      patch admin_product_url(@product1), params: { product: {name: "Updated Product", price: 29.99, description: "This product was updated "} }
-    end
-    assert_redirected_to admin_product_url(@product1)
+    assert patch admin_product_url(@product1), params: { product: {name: "Updated Product", price: 29.99, description: "This product was updated", product_type_id: @product1.product_type_id } }
+    assert_redirected_to product_url(@product1)
   end
 
   test "should destroy product" do

@@ -1,9 +1,9 @@
-<% provide(:title, "Store") %>
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12 mx-auto">
-      <h1>Products</h1>
-      <table class="table table-hover table-responsive">
+<%= form_tag new_admin_product_path, method: :get do %>
+        <%= select_tag :product_type_id, options_from_collection_for_select(ProductType.all, :id, :name) %>
+        <%= submit_tag "New Product", name: nil %>
+      <% end %>
+
+    <table class="table table-hover table-responsive">
         <thead>
           <tr>
             <th>Name</th>
@@ -24,6 +24,3 @@
           <% end %>
         </tbody>
       </table>
-    </div>
-  </div>
-</div>

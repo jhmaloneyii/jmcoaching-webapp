@@ -16,7 +16,7 @@
 </p>
 
 <div id="cart-action">
-  <% if signed_in? %>
+  <% if user_signed_in? %>
     <%= link_to @cart_action, cart_action_path(@product), class: "button", method: :put, remote: true %>
   <% end %>
 </div>

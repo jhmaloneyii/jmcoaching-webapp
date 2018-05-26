@@ -1,8 +1,10 @@
 <% provide(:title, "Blog") %>
+
 <div class="container">
   <div class="row">
     <div class="col-lg-12 mx-auto">
       <h1>JM Coaching Blog</h1>
+      <%= will_paginate @posts %>
       <table class="table">
         <% @posts.each do |post| %>
           <%= render 'shared/post_preview', post: post %>

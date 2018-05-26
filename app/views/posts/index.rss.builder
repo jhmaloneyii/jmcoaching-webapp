@@ -6,7 +6,7 @@ xml.rss :version => "2.0", 'xmlns:atom' => "http://www.w3.org/2005/Atom" do
     xml.link posts_url
     xml.tag! 'atom:link', :rel => 'self', :type => 'application/rss+xml', :href => posts_url
 
-    @posts.each do |post|
+    @all_posts.each do |post|
       xml.item do
         xml.title post.title
         xml.description post.summary

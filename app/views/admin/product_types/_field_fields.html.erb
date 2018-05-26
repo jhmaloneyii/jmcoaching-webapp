@@ -1,7 +1,8 @@
 <fieldset>
-  <%= form.select :field_type, %w[text_field check_box] %>
+  <%= form.select :field_type, %w[text_field check_box boolean select] %>
   <%= form.text_field :name, placeholder: "field_name" %>
   <%= form.check_box :required %> <%= form.label :required %>
+  <%= form.check_box :show %> <%= form.label :show %>
 
   <%= form.hidden_field :_destroy %>
   <%= link_to "[remove]", '#', class: "remove_fields" %>

@@ -1,7 +1,22 @@
+<%= tinymce %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      var summary_text = $("#post_summary");
+      var counter     = $("#counter");
+      var max_length  = counter.data("maximum-length");
+
+      summary_text.keyup(function() {
+          counter.text(max_length - $(this).val().length);
+      });
+
+    });
+</script>
+
 <div class="container">
   <div class="row">
     <div class="col-lg-10 mx-auto">
-      <%= form_with(model: [ :admin,post], local: true) do |form| %>
+      <%= form_with(model: [ :admin, post], local: true) do |form| %>
       <% if post.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -21,7 +36,7 @@
 
       <div class="field">
         <%= form.label :content %>
-        <%= form.text_area :content, id: :post_content, class: "tinymce", size: "100x25" %>
+        <%= form.text_area :content, id: :post_content, class: "tinymce", size: "100x40" %>
       </div>
 
       <div class="field">
@@ -42,7 +57,8 @@
 
       <div class="field">
         <% if @post.image? %>
-        <%= image_tag @post.image.to_s, class: "img-fluid"%>
+        <%= image_tag @post.image.to_s, class: "img-fluid", size: "400" %>
+        <p>I have links to delete image, integrate it with the current change button below. It would also be cool to have the images hooked up to an image library of some sort. </p>
         <% end %>
         <%= form.label :image %>
         <%= form.file_field :image, id: :post_image %>
@@ -55,18 +71,3 @@
     </div>
   </div>
 </div>
-
-<%= tinymce %>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-      var summary_text = $("#post_summary");
-      var counter     = $("#counter");
-      var max_length  = counter.data("maximum-length");
-
-      summary_text.keyup(function() {
-          counter.text(max_length - $(this).val().length);
-      });
-
-    });
-</script>

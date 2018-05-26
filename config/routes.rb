@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   #admin routes
   namespace :admin do
     get '/', to: 'admin#home'
+    resources :posts, path: 'blog', except: [:show]
     resources :product_types
     resources :products
     resources :tags
-    resources :posts, path: 'blog'
   end
 
   #different authentication models - devise

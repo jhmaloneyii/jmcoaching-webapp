@@ -4,13 +4,13 @@
   <div class="row">
     <div class="col-lg-12 mx-auto">
       <h1>JM Coaching Blog</h1>
-      <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+      <%= will_paginate @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
       <table class="table">
         <% @posts.each do |post| %>
           <%= render 'shared/post_preview', post: post %>
         <% end %>
       </table>
-      <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+      <%= will_paginate @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
     </div>
   </div>
 </div>

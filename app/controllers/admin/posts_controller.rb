@@ -2,7 +2,7 @@ class Admin::PostsController < Admin::AdminController
   before_action :set_post, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page => 30)
+    @posts = Post.order(updated_at: :desc).paginate(:page => params[:page], per_page: 10)
   end
 
   # GET /posts/new

@@ -14,8 +14,8 @@ Post.destroy_all
     title: "Seed Blog Post #{x}",
     content: Faker::Lorem.paragraph(100),
     summary: Faker::Lorem.paragraph(1),
-    active: true,
-    remote_image_url: "https://loremflickr.com/300/300"
+    active: [true, false].sample,
+    remote_image_url: "https://loremflickr.com/1600/800"
     ) then p "Seeded Post #{x}" else p "failed seed #{x}"
   end
 end

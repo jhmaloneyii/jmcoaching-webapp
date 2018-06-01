@@ -42,7 +42,7 @@ gem 'tinymce-rails'
 gem 'chosen-rails'
 gem 'redis-rails'
 gem 'will_paginate', '~> 3.1.0'
-gem 'will_paginate-bootstrap'
+gem 'will_paginate-bootstrap4'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 group :development, :test do

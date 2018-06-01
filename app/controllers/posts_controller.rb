@@ -4,8 +4,8 @@ class PostsController < UnsecureApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @all_posts = Post.all.order(updated_at: :desc)
-    @posts = Post.where(active: true).order('updated_at DESC').paginate(:page => params[:page], :per_page => 10)
+    @all_posts = Post.order(updated_at: :desc).order(updated_at: :desc)
+    @posts = Post.where(active: true).order(updated_at: :desc).paginate(:page => params[:page], :per_page => 5)
     respond_to do |format|
       format.html
       format.rss { render :layout => false }

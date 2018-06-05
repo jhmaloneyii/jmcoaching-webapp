@@ -8,8 +8,7 @@
 require 'faker'
 
 Post.destroy_all
-20.times do |x|
-  image = Faker::LoremFlickr.image
+5.times do |x|
   if Post.create!(
     title: "Seed Blog Post #{x}",
     content: Faker::Lorem.paragraph(100),
@@ -21,3 +20,50 @@ Post.destroy_all
 end
 
 Admin.create(username: "jmcoaching", email: "jmcoachingllc@gmail.com", password: 'password')
+
+Tag.destroy_all
+8.times do |x|
+  if Tag.create!(
+    name: Faker::RickAndMorty.character
+    ) then p "Seeded Tag #{x}"
+  end
+end
+
+ProductType.destroy_all
+5.times do |x|
+  if type = ProductType.create!(
+    name: Faker::Coffee.blend_name
+    ) then 
+    p "Seeded Product #{x}"
+    [1,2,3].sample.times do 
+      ProductField.create!(
+        field_type: ["check_box", "text_field", "boolean", "select"].sample,
+        name: Faker::Company.buzzword,
+        required: [true, false].sample,
+        show: [true, false].sample,
+        product_type: type
+        )
+    end
+  end
+end
+
+Product.destroy_all
+5.times do |x|
+  product = Product.new(
+    price: Faker::Number.decimal(2)
+    name: Faker::Pokemon.name
+    description: Faker::RickAndMorty.quote
+    product_type: ProductType.all.sample
+    )
+  for product.product_type.fields do |field|
+    
+  end
+  product.save
+end
+
+
+Post.all.each do |post|
+  post.tags << Tag.all.sample([1,2,3].sample)
+  post.save!
+  p "#{post.title} given tags"
+end

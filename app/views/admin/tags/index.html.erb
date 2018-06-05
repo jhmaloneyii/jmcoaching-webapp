@@ -4,6 +4,7 @@
     <div class="col-lg-12 mx-auto">
       <h1>Tag Admin</h1>
       <%= link_to "Create New Tag", new_admin_tag_path %>
+      <%= will_paginate @tags, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 
       <table class="table">
         <tr>
@@ -19,6 +20,7 @@
           </tr>
         <%end%>
       </table>
+      <%= will_paginate @tags, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
     </div>
   </div>
 </div>

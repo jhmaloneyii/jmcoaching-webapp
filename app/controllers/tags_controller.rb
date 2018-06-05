@@ -4,7 +4,7 @@ class TagsController < ApplicationController
   # GET /tags/1
   # GET /tags/1.json
   def show
-    @posts = Post.all.order(updated_at: :desc)
+    @posts = @tag.posts.paginate(page: params[:page], per_page: 5)
   end
 
   private

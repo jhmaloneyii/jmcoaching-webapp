@@ -15,7 +15,7 @@
     <% @admin_images.each do |admin_image| %>
       <tr>
         <td><%= admin_image.name %></td>
-        <td><%= admin_image.path %></td>
+        <td><%= admin_image.path.to_s %></td>
         <td><%= link_to 'Show', admin_image %></td>
         <td><%= link_to 'Edit', edit_admin_image_path(admin_image) %></td>
         <td><%= link_to 'Destroy', admin_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>

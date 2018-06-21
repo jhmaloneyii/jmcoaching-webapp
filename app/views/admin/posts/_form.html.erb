@@ -58,10 +58,9 @@
       <div class="field">
         <% if @post.image? %>
         <%= image_tag @post.image.to_s, class: "img-fluid", size: "400" %>
-        <p>I have links to delete image, integrate it with the current change button below. It would also be cool to have the images hooked up to an image library of some sort. </p>
         <% end %>
         <%= form.label :image %>
-        <%= form.file_field :image, id: :post_image %>
+        <%= form.file_field :image %>
       </div>
 
       <div class="actions">

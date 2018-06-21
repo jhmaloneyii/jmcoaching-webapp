@@ -8,6 +8,7 @@
 require 'faker'
 
 Post.destroy_all
+p "Posts Cleared"
 5.times do |x|
   if Post.create!(
     title: "Seed Blog Post #{x}",
@@ -29,7 +30,12 @@ Tag.destroy_all
   end
 end
 
+Product.destroy_all
+p "Products Cleared"
+ProductField.destroy_all
+p "Fields Cleared"
 ProductType.destroy_all
+p "Types Cleared"
 5.times do |x|
   if type = ProductType.create!(
     name: Faker::Coffee.blend_name
@@ -47,16 +53,20 @@ ProductType.destroy_all
   end
 end
 
-Product.destroy_all
+answers = {
+  "text_field" => Faker::ChuckNorris.fact,
+  "check_box" => [0,1].sample,
+  "boolean" => [0,1].sample
+}
 5.times do |x|
   product = Product.new(
-    price: Faker::Number.decimal(2)
-    name: Faker::Pokemon.name
-    description: Faker::RickAndMorty.quote
+    price: Faker::Number.decimal(2),
+    name: Faker::Pokemon.name,
+    description: Faker::RickAndMorty.quote,
     product_type: ProductType.all.sample
     )
-  for product.product_type.fields do |field|
-    
+  for field in product.product_type.fields do
+    product.properties[field.name.to_sym] = answers[field.name]
   end
   product.save
 end

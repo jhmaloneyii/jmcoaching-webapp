@@ -19,7 +19,7 @@
           <tr>
             <td><h3><%= link_to "#{post.title}", post %></h3></td>
             <td><p><%= post.active ? "Yes" : "No" %></p></td>
-            <td><p><%= if post.image then post.image.path_url end %></p></td>
+            <td><p><%= if post.image then post.image_url.to_s end %></p></td>
             <td><p><%= post.tags.map { |tag| tag.name }.join(", ") %></p></td>
             <td><%= link_to "Edit", edit_admin_post_path(post.id) %></td>
             <td><%= link_to "Delete", admin_post_path(post.id), method: :delete, data: {confirm: "Are you sure you want to delete?"} %></td>

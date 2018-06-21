@@ -2,7 +2,7 @@
     <td>
       <div class="row">
         <div class="col-lg-4 mx-auto text-center">
-          <%= if post.image then link_to (image_tag post.image.path_url.to_s, class: "img-fluid"), post end %>
+          <%= if post.image then link_to (image_tag post.image_url.to_s, class: "img-fluid"), post end %>
         </div>
         <div class="col-lg-8 mx-auto">
           <h1><%= link_to post.title, post %></h1>

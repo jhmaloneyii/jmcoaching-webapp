@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180607042247) do
-
-  create_table "admin_images", force: :cascade do |t|
-    t.string "name"
-    t.string "path"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20180525170845) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,21 +31,14 @@ ActiveRecord::Schema.define(version: 20180607042247) do
     t.index ["username"], name: "index_admins_on_username", unique: true
   end
 
-  create_table "images", force: :cascade do |t|
-    t.string "name"
-    t.string "path"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.text "summary"
     t.boolean "active"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "image_id"
   end
 
   create_table "posts_tags", id: false, force: :cascade do |t|

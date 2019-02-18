@@ -1,22 +1,26 @@
 <% provide(:title, "Meet the Coaches") %>
 
-<section id="caleb" class="focus-section text-center">  
+<section id="joe" class="focus-section text-center">  
   <div class="container">
     <div class="row">
       <div class="col-lg-12 mx-auto">
-        <h1>Caleb Swartz</h1>
+        <h1>Joseph Maloney</h1>
       </div>
     </div>
     <div class="row">
+      <%= image_tag 'stripes.png', class: 'photo-scale' %>
+    </div>
+    <div class="row">
       <div class="col-lg-6 mx-auto">
-        <%= image_tag "caleb-coach.jpg", size: "540", class: "photo-circle" %>
+        <%= image_tag "joe-coach.jpg", size: "400", class: "photo-circle" %>
       </div>
       <div class="col-lg-6 mx-auto">
         <table style="height: 540px;">
           <tr>
             <td class="align-middle">
-              <h2>Every athlete needs a coach.</h2>
-              <p>JM coaching understands the confusion and uncertainty that comes with training. Cycling is a beautiful sport filled with challenge and adversity and the path forward isn’t always clear. That's why JM Coaching focuses on providing the clarity and tools to overcome these cahllenges.</p>
+              <h2>Experience Matters.</h2>
+              <p>Joe has had years of expeience both racing and coaching. After ascending to to professional ranks as a off-road cyclist, he began coaching to support his racing and found a love of helping others discover their potential.</p>
+              <%= link_to "Meet Coach Joe", coaches_joe_path, class: "btn btn-outline-primary" %>
             </td>
           </tr>
         </table>
@@ -33,18 +37,51 @@
       </div>
     </div>
     <div class="row">
+      <%= image_tag 'stripes.png', class: 'photo-scale' %>
+    </div>
+    <div class="row">
        <div class="col-lg-6 mx-auto">
         <table style="height: 540px;">
           <tr>
             <td class="align-middle">
-              <h2>Every athlete needs a coach.</h2>
-              <p>JM coaching understands the confusion and uncertainty that comes with training. Cycling is a beautiful sport filled with challenge and adversity and the path forward isn’t always clear. That's why JM Coaching focuses on providing the clarity and tools to overcome these cahllenges.</p>
+              <h2>Passionate about Coaching.</h2>
+              <p>Sam has years of experience climbing to the top of domestic XC mountain bike racing. He's worked with coaches to get him there and now he delivers coaching with the athlete at the center like no other.</p>
+              <%= link_to "Meet Coach Sam", coaches_sam_path, class: "btn btn-outline-primary" %>
             </td>
           </tr>
         </table>
       </div>
       <div class="col-lg-6 mx-auto">
-        <%= image_tag "sam-coach.jpg", size: "540", class: "photo-circle" %>
+        <%= image_tag "sam-coach.jpg", size: "400", class: "photo-circle" %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="caleb" class="focus-section text-center">  
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 mx-auto">
+        <h1>Caleb Swartz</h1>
+      </div>
+    </div>
+    <div class="row">
+      <%= image_tag 'stripes.png', class: 'photo-scale' %>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 mx-auto">
+        <%= image_tag "caleb-coach.jpg", size: "400", class: "photo-circle" %>
+      </div>
+      <div class="col-lg-6 mx-auto">
+        <table style="height: 540px;">
+          <tr>
+            <td class="align-middle">
+              <h2>Championship Level Coaching</h2>
+              <p>Caleb has been all over the place when it comes to top level cycling, proving again and again that he knows what it takes to succeed. With National Championships in Cyclocross and Cross-Country, Caleb with show you have to be a successful athlete no matter what your discipline.</p>
+              <%= link_to "Meet Coach Caleb", coaches_caleb_path, class: "btn btn-outline-primary" %>
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>

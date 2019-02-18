@@ -11,5 +11,8 @@ class StaticPagesController < UnsecureApplicationController
 
   def sam
   end
-    
+  
+  def joe
+  end
+  
 end

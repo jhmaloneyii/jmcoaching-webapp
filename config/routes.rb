@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'coaches', to: 'static_pages#coaches'
   get 'coaches/caleb', to: 'static_pages#caleb'
   get 'coaches/sam', to: 'static_pages#sam'
+  get 'coaches/joe', to: 'static_pages#joe'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
